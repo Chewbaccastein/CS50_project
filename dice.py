@@ -2,14 +2,20 @@
 Rolls two dice
 """
 
-class Dice(die1, die2):
-  ...
+import random
 
+
+class Dice:
+  faces = (1,2,3,4,5,6)
+  
+  def __init__(self, die):
+    self._die = die
+  
 
 #rolls dice 
 def main():
-  dice = Dice()
-  ...
+  die = Dice()
+  
 
 
 

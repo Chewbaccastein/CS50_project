@@ -11,3 +11,10 @@ Final project for CS50 Python:
 -When an alarm is set, Clark will sing until you either Snooze or Stop it.
 
 -If you snooze, Clark will sing again after 9 minutes.
+
+
+**Usage**
+- Live mode: current time based on server-synced time
+- Test mode: let's user chage current time in order to test the Cuckoo alarm/hourly sings
+
+  

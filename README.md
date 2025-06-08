@@ -8,15 +8,13 @@ A playful and functional Windows console-based clock app with an old-fashioned c
 
 #### Features
 
-  **Live Clock Display** (12-hour AM/PM format)
-  **Cuckoo Sing** at the top of each hour (between 8AM and 8PM)
-  **Cricket Sound** during quiet hours (8PM–8AM)
-  **Set & Cancel Alarms**
-  **Snooze** alarms for 9 minutes with any key
-  **Test Mode** for simulating a specific time
-  **Menu Interface** using Windows `msvcrt` module
-  
-Menu interface
+  - **Live Clock Display** (12-hour AM/PM format)
+  - **Cuckoo Sing** at the top of each hour (between 8AM and 8PM)
+  - **Cricket Sound** during quiet hours (8PM–8AM)
+  - **Set & Cancel Alarms**
+  - **Snooze** alarms for 9 minutes with any key
+  - **Test Mode** for simulating a specific time
+  - **Menu Interface** using Windows `msvcrt` module
 -----------------------------------------------------------------
 Menu: 1 = set alarm | 2 = cancel alarm | 3 = test mode | 4 = exit 
 -----------------------------------------------------------------

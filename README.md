@@ -6,7 +6,7 @@
 
 A playful and functional Windows console-based clock app with an old-fashioned charm. This project simulates a cuckoo clock that sings on the hour—except during quiet hours—and includes alarm features with snooze support and a test mode for time simulation.
 
-## Features
+#### Features
 
   **Live Clock Display** (12-hour AM/PM format)
   **Cuckoo Sing** at the top of each hour (between 8AM and 8PM)
@@ -21,7 +21,7 @@ Menu interface
 Menu: 1 = set alarm | 2 = cancel alarm | 3 = test mode | 4 = exit 
 -----------------------------------------------------------------
 
-## Requirements
+#### Requirements
 
 - Python 3.6+
 - **Windows OS only** (uses `msvcrt` for keyboard interaction)
@@ -29,7 +29,7 @@ Menu: 1 = set alarm | 2 = cancel alarm | 3 = test mode | 4 = exit
 
 ---
 
-## How to Run
+#### How to Run
 
 Clone the repo and run the script from your terminal:
 

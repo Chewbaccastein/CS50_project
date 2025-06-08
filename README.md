@@ -1,4 +1,4 @@
- **Cuckoo clork with alarm function**
+### **Cuckoo clork with alarm function**
 Final project for CS50 Python:
 
 #### Video Demo:  <URL HERE> 
@@ -16,7 +16,7 @@ Final project for CS50 Python:
 
 -If you snooze, clork will sing again after 9 minutes.
 
-**Usage**
+### **Usage**
 - Live mode: current time based on server-synced time
 - Test mode: let's user chage current time in order to test the Cuckoo alarm/hourly sings
 

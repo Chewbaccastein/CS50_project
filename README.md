@@ -15,6 +15,7 @@ A playful and functional Windows console-based clock app with an old-fashioned c
   **Snooze** alarms for 9 minutes with any key
   **Test Mode** for simulating a specific time
   **Menu Interface** using Windows `msvcrt` module
+  
 Menu interface
 -----------------------------------------------------------------
 Menu: 1 = set alarm | 2 = cancel alarm | 3 = test mode | 4 = exit 

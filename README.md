@@ -20,4 +20,6 @@ Final project for CS50 Python:
 - Live mode: current time based on server-synced time
 - Test mode: let's user chage current time in order to test the Cuckoo alarm/hourly sings
 
-  
+### Limitations
+Currently, it only works on Windows, as the msvcrt module is used to detect keyboard inputs while the program is running.
+

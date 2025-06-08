@@ -316,10 +316,10 @@ def test_mode():
                 hour = 0
             
             test_clock.set_time(hour, minute, second)
-            # testing for cuckoo sing at the top of the hour
-            if test_clock.minute == 0 and test_clock.second == 0:
-                test_clock._last_sing_hour = -1
-                test_clock.cuckoo_sing()       
+            # # testing for cuckoo sing at the top of the hour
+            # if test_clock.minute == 0 and test_clock.second == 0:
+            #     test_clock._last_sing_hour = -1
+            #     test_clock.cuckoo_sing()       
             break
         except ValueError: print("Please try again")
             

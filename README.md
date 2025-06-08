@@ -1,25 +1,38 @@
-### **Cuckoo clock with alarm function**
-Final project for CS50 Python:
+# Cuckoo Clock Alarm App (Windows Console)
 
-#### Video Demo:  https://youtu.be/-EQgTvnFGRQ
+#### Video Demo:  <https://youtu.be/-EQgTvnFGRQ>
 
+#### Description: 
 
-#### Description:
+A playful and functional Windows console-based clock app with an old-fashioned charm. This project simulates a cuckoo clock that sings on the hour—except during quiet hours—and includes alarm features with snooze support and a test mode for time simulation.
 
--Cuckoo clock sings every hour, matching the hour on the clock (e.g., 1:00 PM = 1 cuckoo, 5:00 PM = 5 cuckoos).
+## Features
 
--Uses a 12-hour clock format (AM/PM).
+- **Live Clock Display** (12-hour AM/PM format)
+- **Cuckoo Sing** at the top of each hour (between 8AM and 8PM)
+- **Cricket Sound** during quiet hours (8PM–8AM)
+- **Set & Cancel Alarms**
+- **Snooze** alarms for 9 minutes with any key
+- **Test Mode** for simulating a specific time
+- 🖥**Menu Interface** using Windows `msvcrt` module
+Menu interface
+-----------------------------------------------------------------
+Menu: 1 = set alarm | 2 = cancel alarm | 3 = test mode | 4 = exit 
+-----------------------------------------------------------------
 
--Quiet hours are from 8:00 PM to 8:00 AM — no cuckoo sounds during this time.
+## Requirements
 
--When an alarm is set, clock will sing until you either Snooze or Stop it.
+- Python 3.6+
+- **Windows OS only** (uses `msvcrt` for keyboard interaction)
+- No third-party libraries required
 
--If you snooze, clock will sing again after 9 minutes.
+---
 
-### **Usage**
-- Live mode: current time based on server-synced time
-- Test mode: let's user chage current time in order to test the Cuckoo alarm/hourly sings
+## How to Run
 
-### Limitations
-Currently, it only works on Windows, as the msvcrt module is used to detect keyboard inputs while the program is running.
+Clone the repo and run the script from your terminal:
+
+```bash
+python cuckoo_clock.py
+
 

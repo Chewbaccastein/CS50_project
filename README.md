@@ -10,7 +10,7 @@ Final project for CS50 Python:
 
 -Uses a 12-hour clock format (AM/PM).
 
--Quiet hours are from 9:00 PM to 8:00 AM — no cuckoo sounds during this time.
+-Quiet hours are from 8:00 PM to 8:00 AM — no cuckoo sounds during this time.
 
 -When an alarm is set, clork will sing until you either Snooze or Stop it.
 

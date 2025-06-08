@@ -1,6 +1,10 @@
-# CS50_project
+ **Cuckoo clork with alarm function**
 Final project for CS50 Python:
-**Cuckoo clork with alarm function**
+
+#### Video Demo:  <URL HERE> 
+
+
+#### Description:
 
 -Cuckoo clork sings every hour, matching the hour on the clock (e.g., 1:00 PM = 1 cuckoo, 5:00 PM = 5 cuckoos).
 
@@ -11,7 +15,6 @@ Final project for CS50 Python:
 -When an alarm is set, clork will sing until you either Snooze or Stop it.
 
 -If you snooze, clork will sing again after 9 minutes.
-
 
 **Usage**
 - Live mode: current time based on server-synced time

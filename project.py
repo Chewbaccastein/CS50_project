@@ -34,7 +34,7 @@ class Clock:
         self._hour = hour
         self._minute = minute
         self._second = second
-        self.last_sing_hour = None
+        self._last_sing_hour = -1
     
     def am_pm(self):
         if 0 <= self._hour < 12:
@@ -62,15 +62,16 @@ class Clock:
     
 
     def cuckoo_sing(self): # cuckoo sings the number of hours, 12-hr clock based. quiet time is 8pm - 8am, (cuckoo does not sing during this period)
-        if self._minute == 0 and self._second == 0:
-            if self._last_sing_hour != self._hour and (8 <= self._hour < 20):
+        if self._minute == 0 and self._second == 0 and self._last_sing_hour != self._hour:
+            if 8 <= self._hour < 20:
                 cuckoo_count = self._hour % 12 or 12
                 for _ in range(cuckoo_count):
                     print("\nCuckoo!")
                     sleep(0.3)
-                self._last_sing_hour = self._hour
             else:
                 print("\n**cricket**") # Quite hour
+                
+            self._last_sing_hour = self._hour
         
         
         
@@ -94,10 +95,7 @@ class Clock:
             self._hour += 1
         if self._hour >= 24:
             self._hour = 0
-
-"""
-ealier version of def cuckoo_sing(), now it is in Clock class def cuckoo_sing(self)
-"""
+    
     # zero_minute, zero_second = current_time.minute, current_time.second
     # numbers_sing = current_time.hour
     # if 8 <= numbers_sing < 13 and zero_minute == zero_second == 0:
@@ -196,65 +194,6 @@ def get_current_time():
     return local_time
 
 
-# def display_update():
-#     # global last_sing_hour
-    
-#     last_display = " "
-#     new_display = get_current_time()
-    
-#     if new_display != last_display:
-#         sys.stdout.write("\r" + str(new_display).center(70))
-#         sys.stdout.flush()
-#         last_display = new_display
-        
-        
-#     # triggers cuckoo sing at the top of hours.
-    
-#     if new_display.minute == 0 and new_display.second == 0:
-#         cuckoo_sing()
-#         last_sing_hour = new_display.hour
-    
-#     return new_display
-
-
-# def user_menu():
-#     if msvcrt.kbhit(): 
-#         user_input = msvcrt.getch()
-#         if user_input == b'1':
-#             set_alarm()
-#         elif user_input == b'2':
-#             cancel_alarm()
-#         elif user_input == b'3':
-#             test_mode()
-#         elif user_input == b'4':
-#             print("\n>>>Exiting...")
-#             sys.exit()
-
-    
-# def cuckoo_sing(): # cuckoo sings the number of hours, 12-hr clock based. quiet time is 8pm - 8am, (cuckoo does not sing during this period)
-#     current_time = get_current_time()
-#     hour = current_time.hour % 12
-#     if current_time.hour == 12:
-#         hour = 12
-#     if 8 <= current_time.hour < 20:
-#         for _ in range(hour):
-#             print("Cuckoo!")
-#             sleep(0.6)
-#     else:
-#         print("**cricket**") # Quite hour
-    
-#     # zero_minute, zero_second = current_time.minute, current_time.second
-#     # numbers_sing = current_time.hour
-#     # if 8 <= numbers_sing < 13 and zero_minute == zero_second == 0:
-#     #     for _ in range(numbers_sing):
-#     #         print("Cuckoo!")
-#     #         sleep(0.5)
-#     # elif 12 < numbers_sing < 20 and zero_minute == zero_second == 0:
-#     #     for _ in range(24 - numbers_sing):
-#     #         print("Cuckoo!")
-#     #         sleep(0.5)
-#     # else:
-#     #     print("**cricket**") # Quiet hour
 
 alarm_set = (-1, -1, -1) # global variable to store alarm time
 alarm_trigger = False # global variable to indicate if alarm is set
@@ -377,7 +316,10 @@ def test_mode():
                 hour = 0
             
             test_clock.set_time(hour, minute, second)
-            
+            # testing for cuckoo sing at the top of the hour
+            if test_clock.minute == 0 and test_clock.second == 0:
+                test_clock._last_sing_hour = -1
+                test_clock.cuckoo_sing()       
             break
         except ValueError: print("Please try again")
             
@@ -387,13 +329,19 @@ def test_mode():
     print("Test mode | Please hit any key to go back to the main menu")
     while True:
         
+        if test_clock.minute == 0 and test_clock.second == 0:
+            test_clock._last_sing_hour = -1
+        
         print("\r" + str(test_clock), end="")
         result = alarm_cuckoo(test_clock)
         if result in ("snoozed", "canceled"):
             sleep(1)
             break
+        
+        if test_clock.minute == 0 and test_clock.second == 0:
+            test_clock.cuckoo_sing()
+            
         test_clock.tick()
-        test_clock.cuckoo_sing()
         sleep(1)
         
         if msvcrt.kbhit():
@@ -403,6 +351,11 @@ def test_mode():
     os.system('cls')
     return
 
+
+
+
+
+"""
     # global alarm_set
     # # alarm check, if alarm is canceled or snoozed, it will exit the test mode back to main.
     # if (test_clock.hour, test_clock.minute, test_clock.second) == alarm_set and alarm_trigger == True:
@@ -425,9 +378,7 @@ def test_mode():
     #                 print(f"\nSnoozed! new alarm set for {(snooze_clock.hour % 12 or 12):02}:{snooze_clock.minute:02} {snooze_clock.am_pm()}")
     #                 sleep(1)
     #                 return 
-  
-   
-
+"""
 
 if __name__ == "__main__":
     main()
